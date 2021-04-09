@@ -1,3 +1,15 @@
+# Fork of Assemblies-of-putative-SARS-CoV2-spike-encoding-mRNA-sequences-for-vaccines-BNT-162b2-and-mRNA-1273   					 
+
+User sanxiyn on Hacker News [said](https://news.ycombinator.com/item?id=26630537):
+
+> Both sequences express the same protein.
+>
+> Sequences are different because they are differently codon optimized. See https://en.wikipedia.org/wiki/Codon_usage_bias, especially "Effect on transcription or gene expression" section. 
+
+The file `proteindiff.py` has the goal of checking the veracity of this statement. I'm not 100% confident that it currently is extracting the correct [ORF](https://en.wikipedia.org/wiki/Open_reading_frame).  It currently translates to 1050 amino acids and I would expect closer to 4,000 (bases) / 3 (bases/codon) = 1333 (amino acids).  I'm more sure the start codon is being found correctly. Within the 1050 amino acids that are translated from the DNA sequences, I am finding 20 amino acids different between them.  A majority of these are represented in ascii as `*` characters, which denote a stop codon.  Additionally, Biopython warns me that I'm invoking translation on a non power of three length string.  Both of these lead me to suspect the reading frame may be wrong.  So take all of this with a grain of salt until I investigate further.
+
+Now on to the original readme:
+
 # Assemblies-of-putative-SARS-CoV2-spike-encoding-mRNA-sequences-for-vaccines-BNT-162b2-and-mRNA-1273   					 
 ##version 0.2Beta 03/30/21: (update intended to (i) clarify the clinical and research importance of sequence information and strand topology measurements, and (ii) clarify that the mRNA sequence is not a recipe to produce vaccine)##
 
